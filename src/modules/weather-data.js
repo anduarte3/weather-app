@@ -1,19 +1,28 @@
+const coolBox = document.createElement('div');
+const cityName = document.createElement('h2');
+const weatherCondition = document.createElement('p');
+const temp = document.createElement('p');
+const feelsLike = document.createElement('p');
+const humidity = document.createElement('p');
+const wind = document.createElement('p');
+
 function getObject(obj) {
 
-    const coolBox = document.createElement('div');
-    const cityName = document.createElement('h2');
-    const weatherCondition = document.createElement('p');
-    const temp = document.createElement('p');
-    const feelsLike = document.createElement('p');
-    const humidity = document.createElement('p');
-    const wind = document.createElement('p');
+    const weatherData = {
+        name: obj['name'],
+        weather: obj['weather'][0]['main'],
+        temp: parseInt(obj['main']['temp']) + ' °C',
+        feels_like: parseInt(obj['main']['feels_like']) + ' °C',
+        humidity: obj['main']['humidity'] + '%',
+        wind: parseInt(obj['wind']['speed']) + ' km/h',
+    }
 
-    cityName.textContent = obj['name'];
-    weatherCondition.textContent = obj['weather'][0]['main'];
-    temp.textContent = parseInt(obj['main']['temp']) + ' °C';
-    feelsLike.textContent = parseInt(obj['main']['feels_like']) + ' °C';
-    humidity.textContent = obj['main']['humidity'] + '%';
-    wind.textContent = parseInt(obj['wind']['speed']) + ' km/h';
+    cityName.textContent = weatherData['name'];
+    weatherCondition.textContent = weatherData['weather'];
+    temp.textContent = weatherData['temp'];
+    feelsLike.textContent = weatherData['feels_like'];
+    humidity.textContent = weatherData['humidity'];
+    wind.textContent = weatherData['wind'];
 
     document.body.appendChild(cityName);
     document.body.appendChild(weatherCondition);
@@ -24,4 +33,13 @@ function getObject(obj) {
 
 }
 
-export default getObject
+function clearAll() {
+    cityName.textContent = '';
+    weatherCondition.textContent = '';
+    temp.textContent = '';
+    feelsLike.textContent = '';
+    humidity.textContent = '';
+    wind.textContent = '';
+}
+
+export { getObject, clearAll }

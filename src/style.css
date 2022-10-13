@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: lightskyblue;
+    background: url("../landscape.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.field {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 50px;
+    padding-right: 100px;
+}
+
+input[type=text] {
+    height: 25px;
+    width: 125px;
+}
+button {
+
+}
