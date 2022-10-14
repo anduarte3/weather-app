@@ -1,9 +1,6 @@
 import './style.css';
 import { getObject, clearAll } from './modules/weather-data.js'
 
-//write functions that hit the API
-
-
 const form = document.getElementById('weather-form');
 
 form.addEventListener('submit', (event) => {

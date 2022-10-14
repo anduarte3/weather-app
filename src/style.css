@@ -1,13 +1,71 @@
+@font-face {
+    src: url(../fonts/FredokaOne-Regular.ttf);
+    font-family: frd;
+}
 body {
     margin: 0;
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    background-color: lightskyblue;
-    background: url("../landscape.png");
+    background: url("../landscape2.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    font-family: frd;
+    color: white;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #3AAFA9;
+    height: 100px;
+    padding: 5px;
+}
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 40px;
+}
+.image {
+    height: 100px;
+    width: 100px;
+    margin-left: 50px;
+}
+.weather-box {
+    margin: 0 auto;
+    margin-top: 100px;
+    height: 300px;
+    width: 500px;
+}
+.style-col {
+    display: flex;
+    flex-direction: row;
+}
+.upper-box {
+   display: flex;
+   flex-direction: column;
+   padding-right: 30px;
+}
+.lower-box {
+    margin-top: 40px;
+    font-size: 20px;
+    padding-left: 30px;
+    top: 100px;
+    left: 20px;
+}
+.temp-format {
+    font-size: 100px;
+}
+.weather-format {
+    position: relative;
+    bottom: 50px;
+}
+.vl {
+    border-left: 6px solid white;
+    height: 150px;
+    margin-top: 45px;
 }
 .field {
     display: flex;
@@ -15,11 +73,22 @@ body {
     padding-top: 50px;
     padding-right: 100px;
 }
-
+#weather-form {
+    font-family: frd;
+}
 input[type=text] {
     height: 25px;
     width: 125px;
+    background-color: coral;
+    outline: none;
+    border-radius: 3px;
+    border: 3px solid coral;
+    font-family: frd;
 }
-button {
-
+input[type=text]:focus {
+    background-color: coral;
+    border: 3px solid coral;
+}
+::placeholder {
+    color: white;
 }
